@@ -1,0 +1,24 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "dep": "sh deploy.sh",
+    "update:projects": "node scripts/generate-projects.cjs"
+  },
+  "keywords": [],
+  "author": "Angelina",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.2.45"
+  },
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "oh-my-live2d": "^0.19.3"
+  }
+}
