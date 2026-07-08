@@ -20,5 +20,8 @@
   "dependencies": {
     "@types/node": "^18.11.18",
     "oh-my-live2d": "^0.19.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
   }
 }
