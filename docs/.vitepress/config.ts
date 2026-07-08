@@ -56,7 +56,7 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/angel200109" },
     ],
     footer: {
-      copyright: "Copyright © 2027-present Angelina",
+      copyright: "Copyright © 2025-present Angelina",
     },
     editLink: {
       pattern: "https://github.com/angel200109",
