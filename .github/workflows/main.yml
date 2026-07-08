@@ -15,9 +15,9 @@ jobs:
       - name: Install and Build
         run: |
           npm install -g pnpm
-          cd docs
-          pnpm install
-          pnpm build
+          pnpm config set ignore-build-scripts false
+          pnpm install --no-frozen-lockfile
+          pnpm run build
 
       - name: Deploy
         run: |
