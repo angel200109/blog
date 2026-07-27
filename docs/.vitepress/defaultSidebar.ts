@@ -88,6 +88,12 @@ export const defaultSidebar = [
       { text: "Ajax 避开浏览器缓存的方法", link: "/basics/ajax-cache-bypass" },
       { text: "eval 能干什么，有什么危害", link: "/basics/eval-risks" },
       { text: "惰性函数是什么", link: "/basics/lazy-function" },
+      { text: "JS 监听对象属性改变的几种方式", link: "/basics/js-object-observe" },
+      { text: "Array.sort 在 V8 里的实现机制", link: "/basics/v8-sort-implementation" },
+      { text: "函数传值：值传递还是引用传递", link: "/basics/function-pass-by-value" },
+      { text: "不同类型宏任务的优先级", link: "/basics/macro-task-priority" },
+      { text: "console.log 被重写后怎么恢复", link: "/basics/restore-console-log" },
+      { text: "script 标签 async 和 defer 的区别", link: "/basics/script-async-defer" },
     ],
   },
   {

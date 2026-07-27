@@ -1,7 +1,8 @@
 {
   "lastProcessedFile": "2-JavaScript-part2.md",
-  "lastProcessedLine": 372,
-  "lastProcessedSection": "惰性函数",
-  "generatedCount": 50,
-  "lastRun": "2026-07-24T14:30:00+08:00"
+  "lastProcessedLine": 377,
+  "lastProcessedSection": "script 标签 async 和 defer 的区别",
+  "generatedCount": 56,
+  "lastRun": "2026-07-27T11:05:00+08:00",
+  "exhausted": true
 }
