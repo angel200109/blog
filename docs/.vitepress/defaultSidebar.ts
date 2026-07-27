@@ -104,6 +104,12 @@ export const defaultSidebar = [
       { text: "交叉类型和联合类型", link: "/typescript/intersection-vs-union" },
       { text: "类型断言 as 怎么用", link: "/typescript/type-assertion" },
       { text: "泛型：类型的参数化", link: "/typescript/generics" },
+      { text: "类型守卫的四种姿势", link: "/typescript/type-guards" },
+      { text: "enum 枚举怎么用", link: "/typescript/enum" },
+      { text: "非空断言、可选属性和只读", link: "/typescript/utility-modifiers" },
+      { text: "异步编程中的类型", link: "/typescript/async-types" },
+      { text: "模块化 vs 命名空间", link: "/typescript/module-vs-namespace" },
+      { text: "TS 中的 this 类型", link: "/typescript/this-type" },
     ],
   },
   {
