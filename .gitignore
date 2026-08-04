@@ -5,3 +5,4 @@ docs/.vitepress/cache
 docs/GUIDE.md
 notes/
 !notes/.progress.json
+docs/.backup/

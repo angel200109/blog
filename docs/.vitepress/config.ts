@@ -22,8 +22,8 @@ export default defineConfig({
     anchor: {},
     toc: { level: [1, 2, 3, 4] },
     theme: {
-      light: 'dracula',
-      dark: 'vitesse-black',
+      light: 'github-light',
+      dark: 'github-dark',
     },
     lineNumbers: true,
   },

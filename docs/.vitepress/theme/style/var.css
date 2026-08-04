@@ -46,7 +46,7 @@
   --vp-c-text-3: rgba(60, 60, 67, 0.56);
 
   /* ===== 代码块样式 ===== */
-  --vp-code-block-bg: rgba(40, 44, 52, 0.98);
+  --vp-code-block-bg: #f6f8fa;
   --vp-code-tab-divider: rgba(139, 106, 174, 0.2);
   --vp-code-copy-code-border-color: rgba(139, 106, 174, 0.2);
   --vp-code-copy-code-bg: rgba(139, 106, 174, 0.05);
@@ -222,6 +222,16 @@
 }
 
 /* ===== 代码高亮优化 ===== */
+.vp-doc :not(pre) > code {
+  color: #6e4d91;
+  background-color: rgba(139, 106, 174, 0.08);
+}
+
+.dark .vp-doc :not(pre) > code {
+  color: #daa8ee;
+  background-color: rgba(185, 154, 212, 0.12);
+}
+
 .dark .vp-code-group .tabs {
   border-bottom-color: rgba(185, 154, 212, 0.2);
 }
