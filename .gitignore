@@ -6,3 +6,4 @@ docs/GUIDE.md
 notes/
 !notes/.progress.json
 docs/.backup/
+.workbuddy/
