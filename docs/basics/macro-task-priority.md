@@ -1,10 +1,5 @@
 # 不同类型宏任务的优先级
 
-## 简介
-
-都知道 JS 的事件循环分宏任务和微任务，微任务比宏任务优先执行。但宏任务之间也有优先级差异——不是谁先进队列谁先跑。这跟浏览器对用户体验的考量直接相关。
-
-## 核心概念
 
 ### 宏任务的类型
 
@@ -59,36 +54,3 @@ rAF 的优先级通常高于 setTimeout——它被归为"渲染相关的宏任�
 // 但确保至少有一个事件在下一帧得到处理
 ```
 
-## 实战场景
-
-如果你想做流畅的动画，用 `requestAnimationFrame` 别用 `setTimeout`：
-
-```js
-// 不好
-setTimeout(() => {
-  el.style.left = pos + 'px'
-  pos += 1
-}, 16)
-
-// 好——和浏览器刷新率同步
-function animate() {
-  el.style.left = pos + 'px'
-  pos += 1
-  requestAnimationFrame(animate)
-}
-```
-
-另一个常见场景：你需要在 DOM 更新后立刻获取尺寸。因为渲染在宏任务末尾执行，可以这样：
-
-```js
-el.classList.add('expanded')
-// 此时 DOM 变了但布局还没算
-requestAnimationFrame(() => {
-  // 布局已完成，可以读到正确尺寸
-  const height = el.offsetHeight
-})
-```
-
-## 总结
-
-宏任务之间不是 FIFO 铁板一块。rAF 和渲染有最高优先级，用户交互次之，定时器垫底。做动画用 rAF，需要精确延时的用 setTimeout 但别依赖它做精确计时。

@@ -1,10 +1,5 @@
 # 异步编程中的类型
 
-## 简介
-
-TS 对异步代码的类型支持很自然——`Promise<T>` 的泛型参数能让链式调用的每一步保持类型正确，`async/await` 也不例外。
-
-## 核心概念
 
 ### Promise 的泛型 `Promise<T>`
 
@@ -74,29 +69,3 @@ const [user, posts] = await Promise.all([
 
 `Promise.all` 的参数是元组时，返回值的类型也是对应的元组。
 
-## 实战场景
-
-封装 API 层最常用：
-
-```ts
-interface ApiResponse<T> {
-  code: number
-  data: T
-  message: string
-}
-
-async function request<T>(url: string): Promise<ApiResponse<T>> {
-  const res = await fetch(url)
-  return res.json()
-}
-
-// 使用
-const res = await request<User>('/api/user/1')
-// res.data: User ✅
-```
-
-注意 `fetch` 返回的 `response.json()` 返回类型是 `Promise<any>`——这就是为什么建议在外层封装时用泛型明确类型，而不是在每一处调用时 `as User`。
-
-## 总结
-
-`Promise<T>` 的泛型是 TS 异步类型的基石。`async` 函数的返回值自动包一层 `Promise`，`await` 解包返回 `T`。错误处理记得 `error` 是 `unknown`，用 `instanceof` 缩窄。

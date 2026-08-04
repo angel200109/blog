@@ -1,10 +1,5 @@
 # Promise 是什么，怎么用
 
-## 简介
-
-Promise 是 JS 处理异步操作的核心机制。它把"将来某个时刻会完成（或失败）的操作"抽象成一个对象，让你不用再嵌套回调。
-
-## 核心概念
 
 ### 三种状态
 
@@ -50,22 +45,3 @@ doubleData(-2)
 - `.catch()` 本质上是 `.then(null, onRejected)` 的语法糖
 - `.finally()` 不管成功失败都会执行，适合做清理工作
 
-## 实战场景
-
-实际开发里很少手动 new Promise——大多数异步 API 已经返回 Promise 了（fetch、axios 等）。但你很可能会写这样的工具函数：
-
-```javascript
-function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.onload = () => resolve(script);
-    script.onerror = () => reject(new Error(`Failed to load ${src}`));
-    document.head.appendChild(script);
-  });
-}
-```
-
-## 总结
-
-Promise 的核心就三件事：状态管理（pending → fulfilled/rejected）、链式调用（.then/.catch）、错误冒泡。理解了这三样，后面 async/await 就好懂了。

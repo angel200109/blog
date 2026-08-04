@@ -1,10 +1,5 @@
 # TypeScript 泛型
 
-## 简介
-
-泛型是 TS 里最核心的高级特性。简单讲就是把"具体类型"变成"变量"，让你写一次就能适配多种类型。
-
-## 核心概念
 
 ### 为什么需要泛型
 
@@ -107,28 +102,3 @@ getProperty(user, 'name')  // ✅ 返回 string
 getProperty(user, 'email') // ❌ 'email' 不是 user 的 key
 ```
 
-## 实战场景
-
-**React 里最常见：**
-
-```ts
-import { useRef, useState } from 'react'
-
-const inputRef = useRef<HTMLInputElement>(null)  // 指定 ref 类型
-const [user, setUser] = useState<User | null>(null)  // 指定 state 类型
-```
-
-**封装通用组件：**
-
-```ts
-interface SelectProps<T> {
-  options: T[]
-  value: T
-  onChange: (value: T) => void
-  renderOption: (option: T) => string
-}
-```
-
-## 总结
-
-泛型 = 类型的参数化。`T` 不是魔法，就是"占位——调用时才填入具体类型"。`extends` 用来约束这个占位符的范围，`keyof` 把占位符精确到对象的属性名。从函数到接口到类到 React 组件，泛型无处不在。

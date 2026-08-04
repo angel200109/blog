@@ -1,10 +1,5 @@
 # 回调地狱是怎么来的，又怎么解决
 
-## 简介
-
-刚学 JS 异步的时候，最烦的就是一层层嵌套的回调。这个问题的本质是：多个异步任务需要按顺序执行，而且后一个依赖前一个的结果。原生回调写法会把你逼进"回调地狱"。
-
-## 核心概念
 
 ### 先看看地狱长什么样
 
@@ -79,25 +74,3 @@ run();
 
 看起来跟同步代码一样，可读性拉满。本质还是 Promise——async 函数返回的也是 Promise。
 
-## 实战场景
-
-真实业务里最常见的是"先拿用户信息 → 再根据用户 ID 拿文章列表 → 再拿评论"这种串行依赖：
-
-```javascript
-async function loadPage() {
-  try {
-    const user = await getUser();
-    const posts = await getPosts(user.id);
-    const comments = await getComments(posts[0].id);
-    console.log(comments);
-  } catch (err) {
-    console.error("出错了", err);
-  }
-}
-```
-
-对比 `.then()` 链式写法，async/await 至少少三层缩进，而且错误处理用 try/catch 比 `.catch()` 直观得多。
-
-## 总结
-
-Promise + async/await > Promise + then > 嵌套回调。async/await 不是银弹，但写串行异步逻辑的时候它就是最好用的方案。

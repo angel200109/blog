@@ -1,10 +1,5 @@
 # Promise 和 async/await 到底是什么关系
 
-## 简介
-
-面试常问"async/await 和 Promise 的关系"，其实这句话就能说清：**async/await 是 Promise 的语法糖，async 函数的返回值永远是 Promise，await 后面跟的也必须是 Promise**。
-
-## 核心概念
 
 ### async 函数返回 Promise
 
@@ -80,10 +75,3 @@ async function run() {
 
 async/await 的方案里，变量作用域更直观——`user` 和 `posts` 可以在后续代码中直接使用，不需要通过 `.then()` 的参数传递。
 
-## 实战场景
-
-理解了"await 后面是微任务"这一点，就能解释很多奇怪的执行顺序问题。比如 React 里的 `setState` 和 `await` 混用时的渲染时机判断。
-
-## 总结
-
-async/await 没有在 Promise 之上增加新能力，它做的事是把 `.then()` 参数扁平化成变量赋值。理解了这个本质，就知道什么时候该用 async/await（串行依赖），什么时候反而该用 Promise.all（并发）。

@@ -1,10 +1,5 @@
 # 变量提升与暂时性死区
 
-## 简介
-
-"为什么在声明之前访问 `let` 变量会报错，`var` 却是 `undefined`？"——这题几乎每次面试都会变着花样出。答案藏在变量提升和暂时性死区这两个概念里。
-
-## 核心概念
 
 ### 变量提升：代码还没跑到声明，声明已经上去了
 
@@ -49,37 +44,3 @@ function fn() {}
 // 但是：函数表达式用 var/let 声明，只有变量名被提升，函数体不会
 ```
 
-## 实战场景
-
-实际开发中 TDZ 最常踩的坑：
-
-```javascript
-// 不好的写法
-function getData() {
-  if (!cache) {
-    const cache = fetchCache();
-  }
-  return cache; // ReferenceError: cache 在 TDZ 中
-}
-
-// 好的写法
-function getData() {
-  const cache = fetchCache();
-  if (!cache) {
-    return null;
-  }
-  return cache;
-}
-```
-
-还有 `typeof` 的安全假象——`typeof` 对未声明的变量不会报错：
-
-```javascript
-typeof notDeclared; // "undefined"，不报错
-typeof x;           // ReferenceError！因为 let x 在 TDZ 里
-let x;
-```
-
-## 总结
-
-`var` 提升并初始化为 `undefined`，`let`/`const` 提升但不初始化 = 暂时性死区。TDZ 的存在让你没声明就不能用，这是好事——它逼你把变量声明放在正确的位置。

@@ -1,10 +1,5 @@
 # void 和 never 的区别
 
-## 简介
-
-`void` 和 `never` 都不产生有用的返回值，新手容易搞混。一句话区别：**函数正常结束但没有返回值 → void；函数根本不会正常结束 → never。**
-
-## 核心概念
 
 ### void：执行完了，没返回东西
 
@@ -74,22 +69,3 @@ function handleAction(action: Action) {
 
 当你新增了 `Action` 的成员但忘了在 switch 里加 case，`never` 会帮你发现这个遗漏。
 
-## 实战场景
-
-日常开发中 `void` 用得更多——几乎所有不关心返回值的函数都用它。`never` 出现频率低，但在写工具函数（错误处理、类型体操）和穷举检查时很有价值。
-
-```ts
-// 典型的 void 使用
-useEffect(() => {
-  fetchData()
-}, [])
-
-// 典型的 never 使用
-function assertNever(value: never): never {
-  throw new Error(`Unexpected value: ${value}`)
-}
-```
-
-## 总结
-
-`void`：函数能跑完，没返回值。`never`：函数跑不完，永远没有返回值。判断标准很简单——函数执行完后控制权能不能回到调用方，能就是 `void`，不能就是 `never`。

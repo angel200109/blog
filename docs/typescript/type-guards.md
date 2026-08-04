@@ -1,10 +1,5 @@
 # 类型守卫
 
-## 简介
-
-类型守卫让你在运行时缩小变量的类型范围。TS 会根据你的检查逻辑自动推断出更精确的类型，后续代码就能安全访问专属属性。
-
-## 核心概念
 
 ### typeof：基本类型守卫
 
@@ -91,23 +86,3 @@ function handle(result: Result) {
 }
 ```
 
-## 实战场景
-
-从 API 拿数据是自定义守卫最典型的场景——你不知道返回的到底是不是你期望的类型：
-
-```ts
-async function fetchUsers() {
-  const res = await fetch('/api/users')
-  const data: unknown = await res.json()
-
-  if (Array.isArray(data) && data.every(isUser)) {
-    // data: User[] ✅
-    return data
-  }
-  throw new Error('Invalid response format')
-}
-```
-
-## 总结
-
-`typeof` 判基本类型，`instanceof` 判断类实例，`in` 判属性存在，自定义 `is` 处理复杂逻辑。类型守卫让 `unknown` 和联合类型变得可用，是写安全 TS 代码的基础技能。

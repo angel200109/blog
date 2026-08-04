@@ -1,10 +1,5 @@
 # DOM 结构操作：增删移查节点
 
-## 简介
-
-操作 DOM 是前端的基本功。创建节点、插入节点、删除节点、移动节点、查找节点——这五个动作覆盖了绝大部分 DOM 操作场景。即使现在框架帮我们做了大部分事情，但知道原生 API 怎么用，调试和写工具函数时会从容很多。
-
-## 核心概念
 
 ### 创建节点
 
@@ -77,10 +72,3 @@ element.children;                               // 子元素（不含文本节�
 element.nextElementSibling;                     // 下一个兄弟元素
 ```
 
-## 实战场景
-
-写拖拽排序时，把拖拽的元素 `appendChild` 到目标位置就行——节点会自动从原位脱离。写无限滚动时，用 `createDocumentFragment` 批量插入减少回流。这些原生 API 在框架的底层实现里随处可见。
-
-## 总结
-
-增删移查四个字记住：`createElement` + `append`、`remove`、直接 `appendChild` 到新位置就是移动、`querySelector` 一把梭。现代 API 比老 API 好写得多，优先用新的。

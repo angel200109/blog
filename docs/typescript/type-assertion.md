@@ -1,10 +1,5 @@
 # 类型断言 as
 
-## 简介
-
-有时候你比 TS 更清楚一个变量是什么类型——比如从 `document.getElementById` 拿到的元素、从 API 返回的数据。类型断言就是让你手动"告诉"编译器这个值的确切类型。
-
-## 核心概念
 
 ### 两种写法
 
@@ -69,27 +64,3 @@ let x = ('hello' as unknown) as number  // ⚠️ 能编译，但运行时当然
 
 双重断言（先 `as unknown` 再 `as 目标类型`）会跳过关卡，但这是危险的信号——通常意味着你的类型设计有问题。
 
-## 实战场景
-
-**避免滥用**。每写一个 `as` 都在绕过 TS 的保护，多了就背离了用 TS 的初衷。更好的替代方案：
-
-```ts
-// ❌ 用断言逃避
-const data = response as any as User
-
-// ✅ 用类型守卫
-function isUser(obj: unknown): obj is User {
-  return typeof obj === 'object' && obj !== null
-    && 'id' in obj && 'name' in obj
-}
-
-const res = await fetch('/api/user')
-const data = await res.json()
-if (isUser(data)) {
-  console.log(data.name)  // ✅ 类型已缩窄为 User
-}
-```
-
-## 总结
-
-`as` 是工具不是日常。"我比编译器更清楚"的情况比你想象的少——能用类型守卫解决的就别上断言。最合理的断言场景是 DOM 操作和已知格式的 API 响应。

@@ -1,10 +1,5 @@
 # 事件三要素与绑定/解绑
 
-## 简介
-
-给元素绑事件看起来简单，但事件源、事件类型、事件处理函数这三要素缺一不可。绑定方式也有讲究——用 `onclick` 还是 `addEventListener`？绑了要不要解？解绑时匿名函数怎么处理？这些都是日常开发的细节。
-
-## 核心概念
 
 ### 事件三要素
 
@@ -60,10 +55,3 @@ btn.removeEventListener('click', () => console.log('点')); // 无效！这是�
 btn.addEventListener('click', handler, { once: true });
 ```
 
-## 实战场景
-
-写组件时，`onMounted` 里绑定全局事件（scroll、resize），`onUnmounted` 里一定要解绑——不然组件销毁了事件还在，轻则内存泄漏，重则报错。用 `{ once: true }` 可以省掉手动解绑，但只适用于单次触发场景。
-
-## 总结
-
-事件三要素：谁、什么行为、干什么。绑定用 `addEventListener`，解绑用 `removeEventListener` 且必须传同一个函数引用。需要解绑就别用匿名函数。

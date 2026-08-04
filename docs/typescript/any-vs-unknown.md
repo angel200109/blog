@@ -1,10 +1,5 @@
 # any 和 unknown 的区别
 
-## 简介
-
-`any` 和 `unknown` 都是 TS 的"万能类型"，但它俩的设计哲学完全相反。`any` 是关掉类型检查，`unknown` 是暂时不知道类型但要你验证了再用。
-
-## 核心概念
 
 ### any：完全放弃检查
 
@@ -64,26 +59,3 @@ if (typeof b === 'string') {
 }
 ```
 
-## 实战场景
-
-从后端拿数据是 `unknown` 的典型使用场景：
-
-```ts
-const data: unknown = await response.json()
-// 此时 data 类型未知，不能随便用
-
-// 要么定义类型并验证
-interface User { id: number; name: string }
-const user = data as User  // 如果你确定格式
-
-// 要么运行时校验
-if (typeof data === 'object' && data !== null) {
-  // 安全处理
-}
-```
-
-有人觉得写 `unknown` 麻烦，直接用 `any` 省事。但省下来的时间，通常会在未来的某个 bug 上加倍还回来。
-
-## 总结
-
-**外部输入用 `unknown`，内部临时代码才考虑 `any`。** `any` 是逃避类型检查，`unknown` 是推迟类型判断。能不用 `any` 就不用。

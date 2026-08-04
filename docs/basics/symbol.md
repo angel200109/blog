@@ -1,10 +1,5 @@
 # Symbol：JavaScript 里的"独一无二"
 
-## 简介
-
-`Symbol` 算是 ES6 里最容易被忽略的一个类型。它不像箭头函数、Promise 那样天天用，但它在特定场景下是不可替代的——比如不想让别人遍历到的私有属性。
-
-## 核心概念
 
 ### 永远唯一的身份证
 
@@ -48,48 +43,3 @@ const s2 = Symbol.for('app.id');
 console.log(s1 === s2); // true
 ```
 
-## 实战场景
-
-### 场景 1：隐藏内部状态
-
-写个类，不想让使用者用 `for...in` 遍历到内部状态：
-
-```javascript
-const _state = Symbol('state');
-
-class Store {
-  constructor() {
-    this[_state] = {};
-  }
-
-  get(key) {
-    return this[_state][key];
-  }
-
-  set(key, value) {
-    this[_state][key] = value;
-  }
-}
-
-const store = new Store();
-store.set('theme', 'dark');
-console.log(Object.keys(store)); // []，干干净净
-```
-
-### 场景 2：定义常量防止值冲突
-
-```javascript
-const COLOR_RED = Symbol('red');
-const COLOR_BLUE = Symbol('blue');
-
-function paint(color) {
-  switch (color) {
-    case COLOR_RED: return '#ff0000';
-    case COLOR_BLUE: return '#0000ff';
-  }
-}
-```
-
-## 总结
-
-Symbol 解决的是"需要一个绝对不会和别人冲突的值"的问题。日常业务代码用得不多，但在写库、写框架、做底层抽象时很有用。

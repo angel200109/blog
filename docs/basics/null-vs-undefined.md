@@ -1,10 +1,5 @@
 # null 和 undefined 的区别
 
-## 简介
-
-`null` 和 `undefined` 看起来都像"空"，但它们的来历完全不同。搞不清楚的话，调试时很容易被类型判断搞晕。
-
-## 核心概念
 
 ### undefined：系统给的默认值
 
@@ -42,30 +37,3 @@ console.log(null == undefined);   // true，宽松比较下都代表"无"
 console.log(null === undefined);  // false，类型不同
 ```
 
-## 实战场景
-
-判断一个变量到底是"没赋值"还是"明确为空"，在实际开发中很有用：
-
-```javascript
-function getUser(id) {
-  if (id === undefined) {
-    throw new Error('请提供用户 ID');
-  }
-  if (id === null) {
-    return null; // 明确表示查不到
-  }
-  // 正常查询逻辑...
-}
-```
-
-用 `== null` 可以同时判断 `null` 和 `undefined`，是个很实用的技巧：
-
-```javascript
-if (value == null) {
-  // value 是 null 或 undefined 都会进来
-}
-```
-
-## 总结
-
-`undefined` 是系统的"我没被赋值"，`null` 是你的"我故意设为空"。`typeof null === "object"` 是历史遗留 bug，记住了就行。

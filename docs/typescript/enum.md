@@ -1,10 +1,5 @@
 # enum 枚举
 
-## 简介
-
-`enum` 是 TS 的枚举类型，给一组数值起个语义化的名字。JS 里没有原生对应物，编译后会生成额外的代码——这也是它争议比较大的原因。
-
-## 核心概念
 
 ### 数字枚举
 
@@ -100,24 +95,3 @@ const role: Role = 'admin'
 // 比 enum 更轻量，但少了反向映射和遍历能力
 ```
 
-## 实战场景
-
-状态码、角色权限、选项列表这类**值固定且需要语义化**的场景适合 enum。如果只是简单的字符串常量，用联合类型更轻量。
-
-```ts
-enum HttpStatus {
-  OK = 200,
-  Created = 201,
-  BadRequest = 400,
-  Unauthorized = 401,
-  NotFound = 404,
-}
-
-function handleResponse(status: HttpStatus) {
-  if (status === HttpStatus.OK) { /* ... */ }
-}
-```
-
-## 总结
-
-数字枚举有反向映射，字符串枚举值可读性更好。`const enum` 零开销但依赖编译工具。如果只是需要限定值的范围，用 `type X = 'a' | 'b'` 更轻量。需要反向映射或遍历值时再用 enum。

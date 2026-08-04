@@ -1,10 +1,5 @@
 # 数组去重的五种方式
 
-## 简介
-
-数组去重是前端面试和日常开发都绕不过的经典操作。方法很多，但各自的适用场景和性能差异不小，值得掰扯一下。
-
-## 核心概念
 
 ### 方法一：Set（推荐首选）
 
@@ -65,24 +60,3 @@ arr.forEach(val => {
 
 `includes` 比 `indexOf` 语义更清晰，能正确处理 `NaN`（`indexOf` 找不到 `NaN`）。
 
-## 实战场景
-
-大多数情况**直接用 Set**就够了。但如果数组里是对象，需要按某个字段去重，Set 就不好使了：
-
-```javascript
-const users = [
-  { id: 1, name: 'angelina' },
-  { id: 2, name: 'tom' },
-  { id: 1, name: 'angelina-dup' }
-];
-
-// 按 id 去重
-const seen = new Map();
-const unique = users.filter(u => !seen.has(u.id) && seen.set(u.id, true));
-```
-
-## 总结
-
-- 原始值数组 → `[...new Set(arr)]`
-- 对象数组按字段去重 → Map + filter
-- 面试要你写多种方式 → 上面五种挨个背

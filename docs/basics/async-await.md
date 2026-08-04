@@ -1,10 +1,5 @@
 # async/await：让异步代码像同步一样写
 
-## 简介
-
-async 和 await 是 Promise 的语法糖。它们没有创造新的能力，但让异步代码的写法从"链式调用"变成了"看着像同步，跑起来异步"。
-
-## 核心概念
 
 ### async 函数
 
@@ -60,35 +55,3 @@ async function run() {
 
 对比 Promise 链式的 `.then().catch()`，try/catch 更直观——尤其是多个 await 的时候不用写一串 `.catch()`。
 
-## 实战场景
-
-真实项目中 async/await 最常见的两个坑：
-
-1. **别把 forEach 和 async 混用**——forEach 不会等 await：
-
-```javascript
-// ❌ 不会按顺序等
-[1,2,3].forEach(async (id) => {
-  await fetchUser(id);
-});
-
-// ✅ 用 for...of
-for (const id of [1,2,3]) {
-  await fetchUser(id);
-}
-```
-
-2. **并发请求不要串行写**——没有依赖关系的请求并行发：
-
-```javascript
-// ❌ 串行，慢
-const user = await fetchUser();
-const posts = await fetchPosts();
-
-// ✅ 并行，快
-const [user, posts] = await Promise.all([fetchUser(), fetchPosts()]);
-```
-
-## 总结
-
-async/await 本质是 Promise + Generator 的语法糖。核心价值是把异步代码写成同步风格，降低心智负担。什么时候用 await 什么时候用 Promise.all，取决于任务之间有没有依赖。

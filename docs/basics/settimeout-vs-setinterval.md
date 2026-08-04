@@ -1,10 +1,5 @@
 # setTimeout 倒计时 vs setInterval 的区别
 
-## 简介
-
-做倒计时或者定时轮询的时候，`setTimeout` 和 `setInterval` 都能用，但它们背后的行为完全不同。选错了可能会遇到时间漂移、回调堆积这些坑。
-
-## 核心概念
 
 ### setInterval 的坑
 
@@ -50,13 +45,3 @@ function preciseCountdown(duration, onTick, onEnd) {
 
 每次根据实际流逝的时间来算还剩多少，而不是盲目用固定间隔。
 
-## 实战场景
-
-- **轮询接口**：用 `setTimeout` 递归，避免请求堆积
-- **动画循环**：用 `requestAnimationFrame`（不要用定时器）
-- **倒计时 UI**：用 `Date.now()` 修正 + `setTimeout` 递归
-- **简单心跳**：`setInterval` 也 OK，只要回调够轻量
-
-## 总结
-
-`setInterval` 简单直接但容易堆积，`setTimeout` 递归更可控。做倒计时记得用时间戳修正偏移，不然用户看着秒数跳来跳去会很困惑。

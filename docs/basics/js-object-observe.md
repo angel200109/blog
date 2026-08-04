@@ -1,10 +1,5 @@
 # JS 监听对象属性的改变
 
-## 简介
-
-前端开发中经常需要知道某个对象的属性什么时候变了——比如 Vue 的响应式系统、表单脏检查、或者数据变更上报。JS 提供了好几种方式来做这件事，各自的适用场景差挺多。
-
-## 核心概念
 
 ### Object.defineProperty 的 setter
 
@@ -56,12 +51,3 @@ Proxy 支持 13 种拦截操作，除了 set/get，还能拦截 delete、has、o
 
 Chrome 曾经有过 `Object.observe`，原生就能监听对象变化。但它设计得太复杂，性能也不好，2016 年被从标准里移除了。现在不要再想它了。
 
-## 实战场景
-
-做数据绑定类功能时，Proxy 是首选。但要注意 Proxy 不能完全替代原对象——比如 `proxy instanceof` 的判断会出问题，传给某些期望原始类型的 API 也可能报错。另外如果对象嵌套很深，需要递归代理，想省事可以直接用 Vue 3 的 `reactive` 或者自己写个递归 Proxy。
-
-如果只是少数几个已知属性需要监控，defineProperty 更轻量。
-
-## 总结
-
-defineProperty 够用但局限多，Proxy 全面但有一些兼容性陷阱（IE 不支持）。新项目无脑选 Proxy，老项目兼容 IE 就 defineProperty + `$set`。

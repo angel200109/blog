@@ -1,10 +1,5 @@
 # prototype、__proto__ 和原型链
 
-## 简介
-
-JS 的继承机制跟 Java、C++ 完全不同——它不是基于"类"，而是基于"原型"。`prototype`、`__proto__`、原型链这三个概念搞清楚了，JS 对象模型的底层逻辑就通了。
-
-## 核心概念
 
 ### prototype：函数才有的属性
 
@@ -69,6 +64,3 @@ console.log(student.__proto__ === person); // true
 console.log(person.__proto__ === Object.prototype); // true
 ```
 
-## 总结
-
-两个公式记住就行：`实例.__proto__ === 构造函数.prototype`；`构造函数.prototype.__proto__ === Object.prototype`；`Object.prototype.__proto__ === null`。原型链就是按这个方向一层层找属性。

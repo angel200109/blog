@@ -1,10 +1,5 @@
 # JavaScript 类型判断三剑客
 
-## 简介
-
-JS 里判断类型有三个常用方法：`typeof`、`instanceof`、`Object.prototype.toString.call()`。它们各有各的盲区和特长，组合使用才是王道。
-
-## 核心概念
 
 ### typeof：简单粗暴但有坑
 
@@ -63,26 +58,3 @@ a instanceof Number; // false
 b instanceof Number; // true
 ```
 
-## 实战场景
-
-写一个万能的类型判断函数：
-
-```javascript
-function getType(value) {
-  if (value === null) return 'null';
-  if (value === undefined) return 'undefined';
-  // 对 null/undefined 特殊处理避免装箱开销
-  return Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
-}
-
-getType([]);        // "array"
-getType(new Date());// "date"
-getType(/regex/);   // "regexp"
-```
-
-## 总结
-
-- 判断原始类型 → `typeof`（别忘了 null 的坑）
-- 判断引用类型 → `instanceof`（注意跨窗口限制）
-- 需要精确判断 → `Object.prototype.toString.call()`
-- 三者配合，天下无敌

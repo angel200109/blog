@@ -1,10 +1,5 @@
 # bind、apply、call 的区别及内在实现
 
-## 简介
-
-这三个方法都在改变函数的 `this` 指向，但改完之后的行踪完全不同。面试必问，随手写业务代码也常碰到。
-
-## 核心概念
 
 ### 一句话区别
 
@@ -66,21 +61,3 @@ Function.prototype.myBind = function(context, ...boundArgs) {
 
 `bind` 的返回值被 `new` 调用时，`this` 应该指向新创建的对象而不是绑定的 `context`——完整版还需要处理这个边界情况，但核心逻辑就这么几行。
 
-## 实战场景
-
-判断数据类型：`Object.prototype.toString.call(value)`——这是最稳妥的方案，`typeof` 和 `instanceof` 都有盲区。
-
-借调数组方法给类数组对象：
-```js
-const args = Array.prototype.slice.call(arguments)
-// 现在有展开运算符了，直接用 [...arguments] 更干净
-```
-
-事件处理中保持 this 指向：
-```js
-element.addEventListener('click', this.handleClick.bind(this))
-```
-
-## 总结
-
-`call` 和 `apply` 立即执行，`bind` 返回新函数。底层都是用"临时代理"的方式劫持 this。面试手写记得用 Symbol 做 key 名。

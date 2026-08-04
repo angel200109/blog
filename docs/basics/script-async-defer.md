@@ -1,10 +1,5 @@
 # script 标签 async 和 defer 的区别
 
-## 简介
-
-`async` 和 `defer` 是 script 标签的两个属性，都用来异步加载 JS。但它们下载时机和执行时机完全不同，搞混了很可能出 bug——比如脚本加载顺序不对、DOM 还没生成就去操作节点。
-
-## 核心概念
 
 ### 三种模式对比
 
@@ -78,14 +73,3 @@ script.async = false  // 明确禁掉 async
 document.head.appendChild(script)
 ```
 
-## 实战场景
-
-选哪种取决于你对执行顺序和 DOM 就绪状态的要求：
-
-- **有依赖关系 + 需要 DOM**：`defer`。比如先加载 jQuery 再加载依赖 jQuery 的业务代码。
-- **完全独立 + 不关心 DOM**：`async`。比如统计脚本、广告 SDK、第三方挂件。
-- **必须等脚本跑完才能渲染页面**：不加属性，放在 `<head>` 里。但这种情况现在很少这么做，更多是加个 loading 态等 DOM 就绪。
-
-## 总结
-
-`defer` 保证顺序和 DOM 就绪，适合有依赖的脚本。`async` 最快但顺序随机、DOM 不一定就绪，适合独立脚本。一句话口诀：**defer 延迟到 DOM 就绪按序执行，async 一下载完就跑**。

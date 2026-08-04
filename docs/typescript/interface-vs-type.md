@@ -1,10 +1,5 @@
 # interface 和 type 的区别
 
-## 简介
-
-`interface` 和 `type` 都能用来描述对象结构，这也是新手最容易困惑的"选择题"。大部分场景下两者可以互换，但有关键差异。
-
-## 核心概念
 
 ### 扩展方式不同
 
@@ -78,28 +73,3 @@ interface Callback {
 | 函数类型 | ✅（不自然） | ✅（自然） |
 | 原始类型别名 | ❌ | ✅ |
 
-## 实战场景
-
-**用 `interface` 的场景**：描述明确的、可扩展的对象结构——组件 props、API 响应、数据模型。
-
-```ts
-interface ButtonProps {
-  label: string
-  onClick: () => void
-  disabled?: boolean
-}
-```
-
-**用 `type` 的场景**：联合类型、元组、函数签名、简单的类型别名。
-
-```ts
-type Size = 'sm' | 'md' | 'lg'
-type Point = [number, number]
-type AsyncData<T> = { loading: boolean; data: T | null; error: Error | null }
-```
-
-团队里最实用的做法是定个规范：**描述对象用 `interface`，其他用 `type`**。不用每次纠结。
-
-## 总结
-
-大部分场景两者都行。关键差异：`interface` 能声明合并，`type` 能定义联合类型。日常开发可以默认为 `interface` 描述对象、`type` 处理联合/元组/别名。

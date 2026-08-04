@@ -1,10 +1,5 @@
 # 交叉类型和联合类型
 
-## 简介
-
-交叉类型（`&`）和联合类型（`|`）是 TS 类型系统里最容易混淆的一对。它们的作用完全相反：一个是"全都要"，一个是"任选其一"。
-
-## 核心概念
 
 ### 联合类型：就是其中之一
 
@@ -73,43 +68,3 @@ function area(shape: Shape): number {
 }
 ```
 
-## 实战场景
-
-联合类型最常见的场景是枚举值、API 响应状态、函数重载参数：
-
-```ts
-// 字面量联合：限定可选值
-type Status = 'idle' | 'loading' | 'success' | 'error'
-
-// 可辨识联合（discriminated union）
-interface IdleState { status: 'idle' }
-interface LoadingState { status: 'loading'; progress: number }
-interface SuccessState { status: 'success'; data: string[] }
-interface ErrorState { status: 'error'; message: string }
-
-type AsyncState = IdleState | LoadingState | SuccessState | ErrorState
-
-function render(state: AsyncState) {
-  switch (state.status) {
-    case 'idle': return '等待中'
-    case 'loading': return `加载中 ${state.progress}%`  // progress 可用
-    case 'success': return state.data.join(',')          // data 可用
-    case 'error': return `出错了：${state.message}`      // message 可用
-  }
-}
-```
-
-交叉类型则常用于组合多个 interface 或给已有类型加料：
-
-```ts
-type Employee = Person & { employeeId: number }
-
-// 或者用 interface extends
-interface Employee extends Person {
-  employeeId: number
-}
-```
-
-## 总结
-
-联合是"或"（满足其一），交叉是"且"（全部满足）。判断可以用这个帮助：**联合访问共有、交叉拥有全部**。日常开发里联合用得更多，交叉更多出现在类型组合和泛型约束中。
