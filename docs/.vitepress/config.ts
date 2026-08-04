@@ -22,7 +22,7 @@ export default defineConfig({
     anchor: {},
     toc: { level: [1, 2, 3, 4] },
     theme: {
-      light: 'dracula',
+      light: 'github-light',
       dark: 'vitesse-black',
     },
     lineNumbers: true,

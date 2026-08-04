@@ -221,13 +221,40 @@
   box-shadow: 0 2px 8px rgba(185, 154, 212, 0.2);
 }
 
-/* ===== 代码高亮优化 ===== */
+/* ===== 内联代码可读性 ===== */
+.vp-doc :not(pre) > code {
+  color: #6e4d91;
+  background: rgba(139, 106, 174, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.dark .vp-doc :not(pre) > code {
+  color: #daa8ee;
+  background: rgba(185, 154, 212, 0.15);
+}
+
+/* ===== 代码块标题栏 ===== */
+.vp-code-group .tabs {
+  border-bottom-color: rgba(139, 106, 174, 0.2);
+}
+
 .dark .vp-code-group .tabs {
   border-bottom-color: rgba(185, 154, 212, 0.2);
 }
 
+.vp-code-group .tabs label:hover {
+  color: #6e4d91;
+}
+
 .dark .vp-code-group .tabs label:hover {
   color: #daa8ee;
+}
+
+.vp-code-group .tabs label.active {
+  color: #8b6aae;
+  border-bottom-color: #8b6aae;
 }
 
 .dark .vp-code-group .tabs label.active {
