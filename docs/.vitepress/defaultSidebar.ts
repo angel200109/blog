@@ -29,6 +29,8 @@ export const defaultSidebar = [
       { text: "Vue2 和 Vue3 的区别", link: "/vue/vue2-vs-vue3" },
       { text: "Vue3 编译优化", link: "/vue/vue3-compilation-optimization" },
       { text: "Vue3 为什么比 Vue2 快", link: "/vue/vue3-faster-than-vue2" },
+      { text: "Vue3 DOM Diff 算法", link: "/vue/vue3-dom-diff" },
+      { text: "Vue 组件通讯的几种方式", link: "/vue/vue-component-communication" },
     ],
   },
   {
@@ -38,6 +40,7 @@ export const defaultSidebar = [
       { text: "开始", link: "/react/" },
       { text: "Fiber", link: "/react/Fiber" },
       { text: "Hooks", link: "/react/hooks" },
+      { text: "useEffect 闭包陷阱", link: "/react/useeffect-closure-trap" },
     ],
   },
   {
@@ -78,6 +81,13 @@ export const defaultSidebar = [
       { text: "Promise 和 async/await 到底是什么关系", link: "/basics/promise-async-relationship" },
       { text: "原型链：JavaScript 的继承机制", link: "/basics/prototype-chain" },
       { text: "原型链中的优先级规则", link: "/basics/prototype-practice" },
+      { text: "JavaScript 作用域与经典的 setTimeout 循环问题", link: "/basics/js-scope-settimeout" },
+      { text: "DOM 事件流：捕获、目标与冒泡", link: "/basics/dom-event-flow" },
+      { text: "事件委托的原理与实践", link: "/basics/event-delegation" },
+      { text: "TS any 与 unknown 的区别", link: "/typescript/any-vs-unknown" },
+      { text: "TS void 与 never 的区别", link: "/typescript/void-vs-never" },
+      { text: "TS interface 与 type 的区别", link: "/typescript/interface-vs-type" },
+      { text: "TypeScript 泛型详解", link: "/typescript/generics" },
     ],
   },
   {
