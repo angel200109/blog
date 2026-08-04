@@ -1,7 +1,5 @@
 # 伪数组不是数组，但也别慌
 
-在 JavaScript 中，有些对象长得像数组——有数字索引和 `length` 属性——但没有继承 `Array.prototype`，因此无法使用 `push`、`forEach`、`map` 等数组方法。这类对象就是"类数组"（Array-like Object），也叫"伪数组"。
-
 ### 两种常见的类数组
 
 #### `arguments` 对象
