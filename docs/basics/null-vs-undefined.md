@@ -1,7 +1,5 @@
 # null 和 undefined 的区别
 
-`null` 和 `undefined` 是 JavaScript 中两个都代表"无"的值，但它们的来源、语义和使用方式完全不同。
-
 ### 语义差异
 
 `undefined` 是 JavaScript 引擎的默认空值。变量声明后未赋值，引擎自动将其初始化为 `undefined`；函数没有 `return` 语句时，隐式返回 `undefined`；访问对象上不存在的属性，得到的也是 `undefined`。它是系统级的"此处尚未安排"标记。

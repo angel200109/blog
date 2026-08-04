@@ -1,7 +1,5 @@
 # JavaScript 类型判断三剑客
 
-JavaScript 的类型系统混合了原始类型和引用类型，单一方法无法覆盖所有判断场景。实际开发中需要组合 `typeof`、`instanceof` 和 `Object.prototype.toString.call()` 三者。
-
 ### typeof：快速区分原始类型
 
 `typeof` 是编译时确定的运算符，执行开销极低，适合快速检测大多数原始类型。但有两个著名陷阱：`typeof null === "object"`（历史遗留），以及所有非函数引用类型统一返回 `"object"`。

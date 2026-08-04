@@ -1,7 +1,5 @@
 # JavaScript 数据类型全解
 
-JavaScript 的类型系统分为**原始类型（Primitive）**和**引用类型（Reference）**两大类，理解它们的存储差异和运行时行为是编写可靠代码的前提。
-
 ### 七种原始类型与一种复杂类型
 
 原始类型包括 `Number`、`String`、`Boolean`、`null`、`undefined`、ES6 引入的 `Symbol` 和 ES11 引入的 `BigInt`。引用类型统称为 `Object`，包含了普通对象、数组、函数、日期等一切"非原始类型"的实体。
