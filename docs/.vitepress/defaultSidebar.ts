@@ -48,6 +48,14 @@ export const defaultSidebar = [
       { text: "Vue 项目的权限管理", link: "/vue/vue-permission-management" },
       { text: "Vue 项目脚手架", link: "/vue/vue-cli-scaffold" },
       { text: "Vue 插槽的三种用法", link: "/vue/vue-slots" },
+      { text: "Vue3 为什么比 Vue2 打包体积更小", link: "/vue/vue-bundle-size" },
+      { text: "Vue 中的 key", link: "/vue/vue-key-attribute" },
+      { text: "Vue 过滤器", link: "/vue/vue-filters" },
+      { text: "Vue Scoped 样式原理", link: "/vue/vue-scoped-styles" },
+      { text: "Vue $nextTick 使用与实现", link: "/vue/vue-nexttick" },
+      { text: "Vue keep-alive", link: "/vue/vue-keep-alive" },
+      { text: "v-show 与 v-if 的区别", link: "/vue/v-show-vs-v-if" },
+      { text: "v-model 实现原理", link: "/vue/v-model-principle" },
     ],
   },
   {
@@ -58,6 +66,8 @@ export const defaultSidebar = [
       { text: "Fiber", link: "/react/Fiber" },
       { text: "Hooks", link: "/react/hooks" },
       { text: "useEffect 闭包陷阱", link: "/react/useeffect-closure-trap" },
+      { text: "JSX 基础与插值渲染", link: "/react/react-jsx" },
+      { text: "useState 状态管理", link: "/react/react-usestate" },
     ],
   },
   {
