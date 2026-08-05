@@ -68,6 +68,12 @@ export const defaultSidebar = [
       { text: "useEffect 闭包陷阱", link: "/react/useeffect-closure-trap" },
       { text: "JSX 基础与插值渲染", link: "/react/react-jsx" },
       { text: "useState 状态管理", link: "/react/react-usestate" },
+      { text: "useContext：跨组件共享数据", link: "/react/react-usecontext" },
+      { text: "useReducer：集中管理复杂状态逻辑", link: "/react/react-usereducer" },
+      { text: "useEffect：管理函数组件中的副作用", link: "/react/react-useeffect" },
+      { text: "React.memo：跳过无意义的重渲染", link: "/react/react-memo" },
+      { text: "useCallback 与 useMemo：缓存函数与计算结果", link: "/react/react-usecallback-usememo" },
+      { text: "useRef：跨渲染周期保持引用不变", link: "/react/react-useref" },
     ],
   },
   {
