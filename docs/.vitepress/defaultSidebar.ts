@@ -31,6 +31,13 @@ export const defaultSidebar = [
       { text: "Vue3 为什么比 Vue2 快", link: "/vue/vue3-faster-than-vue2" },
       { text: "Vue3 DOM Diff 算法", link: "/vue/vue3-dom-diff" },
       { text: "Vue 组件通讯的几种方式", link: "/vue/vue-component-communication" },
+      { text: "Vue3 为什么用 Proxy 替换 Object.defineProperty", link: "/vue/vue3-why-proxy" },
+      { text: "Vue2 不能监听数组下标的原因", link: "/vue/vue2-array-reactivity" },
+      { text: "为什么 Vue 中的 data 是函数而不是对象", link: "/vue/vue-data-function" },
+      { text: "computed、watch 和 method 怎么选", link: "/vue/vue-computed-vs-watch" },
+      { text: "computed 的缓存与脏检查机制", link: "/vue/vue-computed-mechanism" },
+      { text: "created 和 mounted 有什么区别", link: "/vue/vue-lifecycle" },
+      { text: "vue-router 是什么、能做什么", link: "/vue/vue-router-basics" },
     ],
   },
   {
@@ -88,6 +95,9 @@ export const defaultSidebar = [
       { text: "TS void 与 never 的区别", link: "/typescript/void-vs-never" },
       { text: "TS interface 与 type 的区别", link: "/typescript/interface-vs-type" },
       { text: "TypeScript 泛型详解", link: "/typescript/generics" },
+      { text: "TS 异步编程中的类型", link: "/typescript/ts-async-types" },
+      { text: "TS 模块化与命名空间", link: "/typescript/ts-module-vs-namespace" },
+      { text: "TS 中 this 的类型", link: "/typescript/ts-this-type" },
     ],
   },
   {
