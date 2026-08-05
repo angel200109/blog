@@ -147,16 +147,6 @@ export const defaultSidebar = [
     ],
   },
   {
-    text: "计算机网络",
-    collapsible: true,
-    items: [
-      {
-        text: "开始",
-        link: "/network/",
-      },
-    ],
-  },
-  {
     text: "手写题",
     collapsible: true,
     items: [
