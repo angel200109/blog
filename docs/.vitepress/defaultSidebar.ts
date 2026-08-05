@@ -77,6 +77,7 @@ export const defaultSidebar = [
       { text: "const、let、var 该怎么选", link: "/basics/const-let-var" },
       { text: "变量提升与暂时性死区", link: "/basics/hoisting-tdz" },
       { text: "Symbol：独一无二的值", link: "/basics/symbol" },
+      { text: "JS 字符串常用操作", link: "/basics/js-string-operations" },
       { text: "数组去重的五种方式", link: "/basics/array-deduplication" },
       { text: "清空数组的几种姿势", link: "/basics/array-clear" },
       { text: "一张图记住 JS 数组常用方法", link: "/basics/array-operations" },
@@ -157,7 +158,6 @@ export const defaultSidebar = [
         text: "开始",
         link: "/snippets/",
       },
-      { text: "JS 字符串常用操作", link: "/snippets/js-string-operations" },
     ],
   },
 ];
