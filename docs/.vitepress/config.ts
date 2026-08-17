@@ -7,13 +7,13 @@ const r = (p: string) => resolve(__dirname, p);
 
 // generateFileSidebar(r('../useForm'))
 export default defineConfig({
-  base: "/blog/",
+  base: "/",
   title: "Angelina",
   description: "深入前端技术栈，探索工程化实践，记录成长历程",
   // appearance: false,
   lastUpdated: true,
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/blog/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#8b6aae' }],
     ['meta', { property: 'og:title', content: "Angelina's blog - 前端历险记" }],
     ['meta', { property: 'og:description', content: '深入前端技术栈，探索工程化实践' }],
