@@ -2,16 +2,6 @@ import { DefaultTheme } from "vitepress";
 
 export const defaultSidebar = [
   {
-    text: "HTML&CSS",
-    collapsible: true,
-    items: [
-      {
-        text: "开始",
-        link: "/basics/",
-      },
-    ],
-  },
-  {
     text: "Vue.js",
     collapsible: true,
     items: [
@@ -147,23 +137,18 @@ export const defaultSidebar = [
     ],
   },
   {
-    text: "手写题",
+    text: "MySQL",
     collapsible: true,
     items: [
-      {
-        text: "开始",
-        link: "/handwriting/",
-      },
-    ],
-  },
-  {
-    text: "知识碎片",
-    collapsible: true,
-    items: [
-      {
-        text: "开始",
-        link: "/snippets/",
-      },
+      { text: "开始", link: "/mysql/" },
+      { text: "MySQL 存储引擎", link: "/mysql/mysql-storage-engine" },
+      { text: "数据库三大范式", link: "/mysql/database-normalization" },
+      { text: "MySQL 数据类型", link: "/mysql/mysql-data-types" },
+      { text: "MySQL 索引", link: "/mysql/mysql-index" },
+      { text: "MySQL 事务", link: "/mysql/mysql-transaction" },
+      { text: "MySQL 锁", link: "/mysql/mysql-lock" },
+      { text: "SQL 基础与优化", link: "/mysql/sql-basics-and-optimization" },
+      { text: "分库分表、复制与读写分离", link: "/mysql/mysql-scaling" },
     ],
   },
 ];
