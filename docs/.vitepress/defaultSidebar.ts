@@ -5,10 +5,6 @@ export const defaultSidebar = [
     text: "Vue.js",
     collapsible: true,
     items: [
-      {
-        text: "开始",
-        link: "/vue/",
-      },
       { text: "MVVM 架构", link: "/vue/mvvm-architecture" },
       { text: "Vue 单向数据流", link: "/vue/one-way-data-flow" },
       { text: "Vue3 渲染原理", link: "/vue/vue3-rendering" },
@@ -52,7 +48,6 @@ export const defaultSidebar = [
     text: "React",
     collapsible: true,
     items: [
-      { text: "开始", link: "/react/" },
       { text: "Fiber", link: "/react/Fiber" },
       { text: "Hooks", link: "/react/hooks" },
       { text: "useEffect 闭包陷阱", link: "/react/useeffect-closure-trap" },
@@ -140,7 +135,6 @@ export const defaultSidebar = [
     text: "MySQL",
     collapsible: true,
     items: [
-      { text: "开始", link: "/mysql/" },
       { text: "MySQL 存储引擎", link: "/mysql/mysql-storage-engine" },
       { text: "数据库三大范式", link: "/mysql/database-normalization" },
       { text: "MySQL 数据类型", link: "/mysql/mysql-data-types" },

@@ -11,7 +11,7 @@
     "update:projects": "node scripts/generate-projects.cjs"
   },
   "keywords": [],
-  "author": "Angelina",
+  "author": "Angelxia",
   "license": "ISC",
   "devDependencies": {
     "vitepress": "^1.6.4",

@@ -1,11 +1,17 @@
+import { h } from "vue";
 import Theme from "vitepress/theme";
 import "./style/var.css";
 import { EnhanceAppContext } from "vitepress";
+import HomePage from "./components/HomePage.vue";
 import ProjectList from "./components/ProjectList.vue";
 import ProjectCard from "./components/ProjectCard.vue";
 
 export default {
   ...Theme,
+  Layout: () =>
+    h(Theme.Layout, null, {
+      "home-hero-before": () => h(HomePage),
+    }),
   enhanceApp({ app }: EnhanceAppContext) {
     app.component('ProjectList', ProjectList);
     app.component('ProjectCard', ProjectCard);

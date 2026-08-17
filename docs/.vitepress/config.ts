@@ -8,14 +8,14 @@ const r = (p: string) => resolve(__dirname, p);
 // generateFileSidebar(r('../useForm'))
 export default defineConfig({
   base: "/",
-  title: "Angelina",
+  title: "Angelxia",
   description: "深入前端技术栈，探索工程化实践，记录成长历程",
   // appearance: false,
   lastUpdated: true,
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#8b6aae' }],
-    ['meta', { property: 'og:title', content: "Angelina's blog - 前端历险记" }],
+    ['meta', { property: 'og:title', content: "Angelxia's blog - 前端历险记" }],
     ['meta', { property: 'og:description', content: '深入前端技术栈，探索工程化实践' }],
   ],
   markdown: {
@@ -30,7 +30,7 @@ export default defineConfig({
   themeConfig: {
     // 使用 Logo 替代文字标题
     logo: '/logo.svg',
-    siteTitle: 'Angelina',
+    siteTitle: 'Angelxia',
     search: {
       provider: 'local',
       options: {
@@ -56,7 +56,7 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/angel200109" },
     ],
     footer: {
-      copyright: "Copyright © 2025-present Angelina",
+      copyright: "Copyright © 2025-present Angelxia",
     },
     editLink: {
       pattern: "https://github.com/angel200109",

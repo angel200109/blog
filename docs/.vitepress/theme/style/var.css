@@ -184,6 +184,57 @@
   color: #daa8ee;
 }
 
+/* ===== 自定义主页：隐藏默认 Hero / Features ===== */
+.VPHome .VPHero,
+.VPHome .VPFeatures,
+.VPHome .VPHomeContent {
+  display: none !important;
+}
+
+.VPContent.is-home {
+  padding-top: var(--vp-nav-height);
+  min-height: 0;
+  flex: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.VPHome {
+  margin-bottom: 0 !important;
+  background: var(--vp-c-bg);
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 960px) {
+  .Layout:has(.VPHome) {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .Layout:has(.VPHome) .VPFooter {
+    flex-shrink: 0;
+    padding: 14px 24px;
+  }
+}
+
+.dark .VPHome {
+  background: transparent;
+}
+
+.dark .home-page .orbit-card {
+  background: #2c2c34;
+  border: 1px solid rgba(196, 142, 223, 0.28);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dark .home-page .avatar {
+  border-color: #2a2a2a;
+}
+
 /* ===== 特性卡片悬停效果 ===== */
 .VPFeature:hover {
   border-color: #8b6aae;
