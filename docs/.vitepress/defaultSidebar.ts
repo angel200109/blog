@@ -132,7 +132,7 @@ export const defaultSidebar = [
     ],
   },
   {
-    text: "MySQL",
+    text: "MySQL&Redis",
     collapsible: true,
     items: [
       { text: "MySQL 存储引擎", link: "/mysql/mysql-storage-engine" },
@@ -143,6 +143,12 @@ export const defaultSidebar = [
       { text: "MySQL 锁", link: "/mysql/mysql-lock" },
       { text: "SQL 基础与优化", link: "/mysql/sql-basics-and-optimization" },
       { text: "分库分表、复制与读写分离", link: "/mysql/mysql-scaling" },
+      { text: "Redis 基础与原理", link: "/mysql/redis-basics" },
+      { text: "Redis 数据类型与底层结构", link: "/mysql/redis-data-structures" },
+      { text: "Redis 持久化", link: "/mysql/redis-persistence" },
+      { text: "Redis 缓存", link: "/mysql/redis-cache" },
+      { text: "Redis 高可用与容灾", link: "/mysql/redis-high-availability-and-lock" },
+      { text: "Redis 并发与分布式", link: "/mysql/redis-concurrency-distributed" },
     ],
   },
 ];
